@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<client-config-list xmlns="http://www.ebay.com/soaframework/common/config">
+	<client-config group="eBoxClientGroup"
+				   service-name="{http://www.ebay.com/marketplace/search/v1/services}FindingRecommendationService}">
+		<service-interface-class-name>com.ebay.marketplace.services.findingrecommendationservice.FindingRecommendationService</service-interface-class-name>
+		<service-location>http://FindingRecommendationService.raptor.vip.phx.ebay.com/ws/spf/FindingRecommendationService</service-location>
+
+		<!--
+        <service-location>http://FindingRecommendationService.vip/ws/spf/FindingRecommendationService</service-location>
+        -->
+		<client-instance-config>
+			<invocation-options>
+				<preferred-transport name="HTTP11">
+					<override-options>
+						<socket-connect-timeout-msec>2000</socket-connect-timeout-msec>
+						<socket-read-timeout-msec>3000</socket-read-timeout-msec>
+						<invocation-timeout-msec>5000</invocation-timeout-msec>
+						<num-connect-retries>2</num-connect-retries>
+						<use-detached-local-binding>false</use-detached-local-binding>
+						<client-streaming>false</client-streaming>
+
+						<other-options>
+							<option name="KEEP_ALIVE">true</option>
+						</other-options>
+					</override-options>
+				</preferred-transport>
+
+				<request-data-binding>XML</request-data-binding>
+				<response-data-binding>XML</response-data-binding>
+				<invocation-use-case>FindingRecommendationServiceClient</invocation-use-case>
+			</invocation-options>
+		</client-instance-config>
+	</client-config>
+</client-config-list>

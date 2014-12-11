@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<global-client-config xmlns="http://www.ebay.com/soaframework/common/config">
+    <monitor-config>
+        <storage-provider name="CALLogger">
+            <class-name>com.ebay.soaframework.common.impl.monitoring.storage.DiffBasedSnapshotCALLogger</class-name>
+        </storage-provider>
+        <storage-provider name="FileLogger">
+            <class-name>com.ebay.soaframework.common.impl.monitoring.storage.SnapshotFileLogger</class-name>
+        </storage-provider>
+        <storage-provider name="DiffBasedFileLogger">
+            <class-name>com.ebay.soaframework.common.impl.monitoring.storage.DiffBasedSnapshotFileLogger</class-name>
+            <storage-options>
+                <option name="filename">ClientDiffBasedSOAMetrics.log</option>
+                <option name="delimiter">;</option>
+            </storage-options>
+        </storage-provider>
+        <snapshot-interval>60</snapshot-interval>
+    </monitor-config>
+    <client-config-groups>
+        <client-group name="raptorClientGroup">
+            <client-config>
+                <pipeline-config>
+                    <request-handlers>
+                        <handler name="MessageContextHandler" presence="Replaceable">
+                            <class-name>com.ebay.soaframework.sif.impl.handlers.MessageContextHandler</class-name>
+                        </handler>
+                    </request-handlers>
+                    <logging-handler>
+                        <class-name>com.ebay.soaframework.sif.impl.pipeline.ClientLoggingHandler</class-name>
+                    </logging-handler>
+                </pipeline-config>
+            </client-config>
+        </client-group>
+        <client-group name="eBoxClientGroup">
+            <client-config>
+                <pipeline-config>
+                    <request-handlers>
+                        <handler name="MessageContextHandler" presence="Replaceable">
+                            <class-name>com.ebay.soaframework.sif.impl.handlers.MessageContextHandler</class-name>
+                        </handler>
+                    </request-handlers>
+                    <logging-handler>
+                        <class-name>com.ebay.soaframework.sif.impl.pipeline.ClientLoggingHandler</class-name>
+                    </logging-handler>
+                </pipeline-config>
+            </client-config>
+        </client-group>
+
+        <client-group name="CommonSOAClientGroup">
+            <client-config>
+                <pipeline-config>
+                    <request-handlers>
+                        <handler name="MessageContextHandler" presence="Replaceable">
+                            <class-name>com.ebay.soaframework.sif.impl.handlers.MessageContextHandler</class-name>
+                        </handler>
+                    </request-handlers>
+                    <logging-handler>
+                        <class-name>com.ebay.soaframework.sif.impl.pipeline.ClientLoggingHandler</class-name>
+                    </logging-handler>
+                </pipeline-config>
+            </client-config>
+        </client-group>
+    </client-config-groups>
+
+
+</global-client-config>

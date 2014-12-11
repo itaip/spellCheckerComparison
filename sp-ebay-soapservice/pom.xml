@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>spellcheck</artifactId>
+        <groupId>com.itai.spellcheck</groupId>
+        <version>1.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>ebayspellchecker</artifactId>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.itai.spellcheck</groupId>
+            <artifactId>common</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.ebay.v3jars.services</groupId>
+            <artifactId>FindingRecommendationService</artifactId>
+            <version>1.5.3.1-E895_DEV_BASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ebay.v3project.v3core</groupId>
+            <artifactId>GlobalEnvironment</artifactId>
+            <version>1.0.157-E893_DEV_BASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.2.4</version>
+        </dependency>
+    </dependencies>
+
+</project>
